@@ -1,0 +1,1 @@
+OJS plugin that adds browsing of recent and all articles to front page of journal instance.

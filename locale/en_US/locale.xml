@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale.xml
+  *
+  * Copyright (c) 2000-2012 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings for the en_US (U.S. English) locale.
+  *
+  -->
+ 
+<locale name="en_US" full_name="U.S. English">
+	<message key="cdrs.forms.rsvp">RSVP</message>
+  <message key="cdrs.articleBrowse.displayName">Article Browse</message>
+  <message key="cdrs.articleBrowse.description">Implements a browse view for articles. This can be used to be a continuous issue, if desired.</message>
+  <message key="cdrs.articleBrowse.settings">Settings</message>
+	
+</locale>
