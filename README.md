@@ -5,3 +5,6 @@ git clone into OJS plugins/generic
 rename folder from plugins/generic/ojs_browse to plugins/generic/articleBrowse
 
 enable plugin via admin
+
+
+copy plugin templates into current theme template directory
