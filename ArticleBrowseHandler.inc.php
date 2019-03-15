@@ -11,8 +11,8 @@ class ArticleBrowseHandler extends BrowseHandler {
 	}
 
 
-	function index() {
-		$this->browse();
+	function index($request) {
+		$this->browse($request);
 	}
 
 	function browse($alternateQuery = null) {
