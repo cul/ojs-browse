@@ -29,7 +29,7 @@ class BrowseHandler extends Handler {
 		$journal =& Request::getJournal();
 		$issueDao =& DAORegistry::getDAO('IssueDAO');
 		$templateMgr =& TemplateManager::getManager();
-#		$issue =& $issueDao->getCurrentIssue($journal->getId(), true);
+		$issue =& $issueDao->getCurrent($journal->getId(), true);
 
 		// $journal_id = $journal->getId();
 		$journal_id = 1;
@@ -161,7 +161,7 @@ class BrowseHandler extends Handler {
 		$journal =& Request::getJournal();
 		$publishedArticleDao =& DAORegistry::getDAO('PublishedArticleDAO');
 		$issueDao =& DAORegistry::getDAO('IssueDAO');
-		$issue =& $issueDao->getCurrentIssue($journal->getId(), true);
+		$issue =& $issueDao->getCurrent($journal->getId(), true);
 		$validYears = $publishedArticleDao->getArticleYearRange($issue->getCurrent());
 
 		$yearFirst = new DateTime($validYears[1]);
