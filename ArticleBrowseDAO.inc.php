@@ -30,7 +30,7 @@ class ArticleBrowseDAO extends DAO {
  		$this->articleDao =& DAORegistry::getDAO('ArticleDAO');
  		$this->authorDao =& DAORegistry::getDAO('AuthorDAO');
  		$this->galleyDao =& DAORegistry::getDAO('ArticleGalleyDAO');
-		$this->suppFileDao =& DAORegistry::getDAO('SuppFileDAO');
+		$this->suppFileDao =& DAORegistry::getDAO('SubmissionFileDAO');
 		$this->publishedArticleDao =& DAORegistry::getDAO('PublishedArticleDAO');
  	}
 
@@ -72,7 +72,6 @@ class ArticleBrowseDAO extends DAO {
 	 * @return object array
 	 */
 	function &getPublishedSubmissionsBrowse($journalId, $rangeInfo = null, $reverse = false, $year = null, $sectionId = null) {
-		error_log('POLPOOOL');
 		$primaryLocale = AppLocale::getPrimaryLocale();
 		$locale = AppLocale::getLocale();
 		$params = array(
@@ -120,7 +119,6 @@ return $returner;
 	 * @return object array
 	 */
 	function &getLatestPublishedsubmissions($limit = 5, $journalId = null, $includeSectionId = null, $excludeSectionId = null) {
-				error_log('PROCESS!!!!!4');
 
 		// If there is an mandatory section in the 5 most recent publications:
 		// Display the five most recent publications in reverse-chron. order. 
@@ -222,7 +220,6 @@ return $returner;
 	 * @return object array
 	 */
 	function &getPublishedSubmissionsBrowseCount($journalId, $year = null, $sectionId = null) {
-				error_log('PROCESS!!!!!');
 
 		$primaryLocale = AppLocale::getPrimaryLocale();
 		$locale = AppLocale::getLocale();
