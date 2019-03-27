@@ -11,7 +11,7 @@
 			{/foreach}
 		</address>
 
-		<span class="type {$article->sectionTitle | lower}"><a href="/index.php/index/browse/?section={$article->getSectionId()}">{$article->getSectionTitle()}</a></span> <time datetime="{$article->getDatePublished()|date_format:$dateFormatShort}" pubdate>{$article->getDatePublished()|date_format:$dateFormatLong}</time>
+		<span class="type {$article->sectionTitle | lower}"><a href="/index.php/tremor/browse?section={$article->getSectionId()}">{$article->getSectionTitle()}</a></span> <time datetime="{$article->getDatePublished()|date_format:$dateFormatShort}" pubdate>{$article->getDatePublished()|date_format:$dateFormatLong}</time>
 		<ul class="downloads">
 
 			{foreach from=$article->getLocalizedGalleys() item=galley name=galleyList}
