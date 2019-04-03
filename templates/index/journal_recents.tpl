@@ -30,7 +30,7 @@
 {if $issue}
 	{* Display the table of contents or cover page of the current issue. *}
 	{** It's all a continuous issue '<h3 id="issueTitle">{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</h3> *}
-	{include file="browse/recent.tpl"}
+	{include file=$browseRecentTemplate}
 
 {/if}
 

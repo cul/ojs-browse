@@ -67,6 +67,22 @@ class ArticleBrowsePlugin extends GenericPlugin {
 	function callbackHandleContent($hookName, $args) {
 		$templateMgr =& TemplateManager::getManager();
 
+		define('ARTICLE_BROWSE_PLUGIN_NAME', $this->getName());
+		define('BROWSE_INDEX_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/index.tpl');
+		define('JOURNAL_INDEX_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'index/journal.tpl');		
+		define('BROWSE_BROWSE_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/browse.tpl');
+		define('ARTICLES_LIST_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/articles_list.tpl');
+		define('BROWSE_RECENT_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/recent.tpl');
+		define('BROWSE_INPRESS_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/in-press.tpl');
+
+
+
+		$templateMgr->assign('browseBrowseTemplate', BROWSE_BROWSE_TEMPLATE);
+		$templateMgr->assign('articlesListTemplate', ARTICLES_LIST_TEMPLATE);
+		$templateMgr->assign('browseRecentTemplate', BROWSE_RECENT_TEMPLATE);
+		$templateMgr->assign('browseInpressTemplate', BROWSE_INPRESS_TEMPLATE);
+
+
 		$page =& $args[0];
 		$op =& $args[1];
 

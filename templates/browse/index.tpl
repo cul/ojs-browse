@@ -10,7 +10,7 @@
     {include file="frontend/components/header.tpl"}
 {/strip}
 
-{include file="browse/browse.tpl"}
+{include file=$browseBrowseTemplate}
 
 {include file="frontend/components/footer.tpl"}
 

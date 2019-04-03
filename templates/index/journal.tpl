@@ -86,9 +86,9 @@
         <li class=""><a href="#in-press" data-toggle="tab"><h3>In Press</h3></a></li>
     </ul>
     <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
-        {include file="browse/recent.tpl"}
+        {include file=$browseRecentTemplate}
         
-        {include file="browse/in-press.tpl"}
+        {include file=$browseInpressTemplate}
     </div>
 </div>
 {/if}

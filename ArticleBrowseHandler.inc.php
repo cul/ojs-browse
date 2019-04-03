@@ -17,7 +17,7 @@ class ArticleBrowseHandler extends BrowseHandler {
 
 	function browse($alternateQuery = null) {
 		parent::setupTemplate($request);
-		parent::browse('browse/index.tpl');
+		parent::browse(BROWSE_INDEX_TEMPLATE);
 	}
 	
 }

@@ -20,7 +20,7 @@
 	{$pageInfo}
 	<div id="results" style="margin-top:17px;">
 		<ol class="papers browse" start="{$listStart}">
-			{include file="browse/articles_list.tpl"}
+			{include file=$articlesListTemplate}
 		</ol>
 	</div>
 

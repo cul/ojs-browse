@@ -17,7 +17,7 @@ class IndexRecentsHandler extends BrowseHandler {
 
 	function browse($alternateQuery = null) {
 		parent::setupTemplate($request);
-		parent::browse('index/journal.tpl');
+		parent::browse(JOURNAL_INDEX_TEMPLATE);
 	}
 
 }
