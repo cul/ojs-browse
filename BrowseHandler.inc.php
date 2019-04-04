@@ -88,7 +88,7 @@ class BrowseHandler extends Handler {
 		// $templateMgr->assign('listStop', $to);
 		$templateMgr->assign('sections', $this->getSectionsList($articleDao));
 		$templateMgr->assign('sectionId', $section);
-		$templateMgr->assign('years', $this->getYearsList($browseDao));
+		$templateMgr->assign('years', array_filter($this->getYearsList($browseDao)));
 		$templateMgr->assign('activeYear', $year);
 		$templateMgr->assign('sort', $sort);
 #		$templateMgr->assign('numPages', $totalPages);

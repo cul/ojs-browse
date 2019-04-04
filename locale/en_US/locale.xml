@@ -16,5 +16,15 @@
   <message key="cdrs.articleBrowse.displayName">Article Browse</message>
   <message key="cdrs.articleBrowse.description">Implements a browse view for articles. This can be used to be a continuous issue, if desired.</message>
   <message key="cdrs.articleBrowse.settings">Settings</message>
+
+  <!-- Browse -->
+    <message key="browse.menu">Browse</message>
+    <message key="browse.form.submit">Browse</message>
+    <message key="browse.form.date.order.desc">Newest First</message>
+    <message key="browse.form.date.order.asc">Oldest First</message>
+    <message key="browse.publications">Browse Publications</message>
+
+
+
 	
 </locale>
