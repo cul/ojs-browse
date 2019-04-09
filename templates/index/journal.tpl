@@ -19,12 +19,12 @@
    <div class="infobox">
 	   
 		<div class="cover">
-			<img src="{$baseUrl}/assets/img/cover.png">
+			<img src="{$baseUrl}/plugins/themes/tremor/assets/cover.png">
 		</div>
 	   
 		<ul>
 			<li>
-				<img src="{$baseUrl}/assets/img/icon-calendar.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-calendar.png">
 				<p>
 					<strong>Rapid Turnaround Time</strong><br>
 					Avg. time from submission to first decision is <strong>22 days (~3 weeks)</strong>.<br>
@@ -32,21 +32,21 @@
 				</p>
 			</li>
 			<li>
-				<img src="{$baseUrl}/assets/img/icon-articles.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-articles.png">
 				<p>
 					<strong>Fewer Page Restrictions</strong><br>
 					Full-length articles may be up to 5,000 words. Brief Reports may be up to 2,750 words.
 				</p>
 			</li>
 			<li>
-				<img src="{$baseUrl}/assets/img/icon-varied.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-varied.png">
 				<p>
 					<strong>Numerous Article Types</strong><br>
 					Full-length Articles, Case Reports, Brief Reports, Reviews, Viewpoints, Editorials, Letters, Teaching Images, Video Abstracts, and more.
 				</p>
 			</li>
 			<li>
-				<img src="{$baseUrl}/assets/img/icon-oa.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-oa.png">
 				<p>
 					<strong>Open Access</strong><br>
 					Authors maintain copyright. Greater visibility, increased citations, and higher impact on the field.
