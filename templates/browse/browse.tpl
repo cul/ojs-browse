@@ -19,9 +19,9 @@
 <div style="margin-top:17px;">
 	{$pageInfo}
 	<div id="results" style="margin-top:17px;">
-		<ol class="papers browse" start="{$listStart}">
+		<ul class="cmp_article_list articles" start="{$listStart}">
 			{include file=$articlesListTemplate}
-		</ol>
+		</ul>
 	</div>
 
 	{$pageInfo}
