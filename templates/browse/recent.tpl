@@ -2,7 +2,6 @@
 	
 	<div class="obj_issue_toc">
 	
-		<h3 class="fallback">Selected Recent Publications</h3>
 		<ul class="cmp_article_list articles">
 			{include file=$articlesListTemplate} 
 		</ul>

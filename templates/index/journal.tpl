@@ -15,16 +15,17 @@
 
    <!--<div>{$journalDescription}</div>-->
    
-   
+   {* Homepage info box *}
+
    <div class="infobox">
 	   
 		<div class="cover">
-			<img src="{$baseUrl}/plugins/themes/tremor/assets/cover.png">
+			<img src="{$baseUrl}/plugins/themes/tremor/assets/images/cover.png">
 		</div>
 	   
 		<ul>
 			<li>
-				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-calendar.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/images/icon-calendar.png">
 				<p>
 					<strong>Rapid Turnaround Time</strong><br>
 					Avg. time from submission to first decision is <strong>22 days (~3 weeks)</strong>.<br>
@@ -32,21 +33,21 @@
 				</p>
 			</li>
 			<li>
-				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-articles.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/images/icon-articles.png">
 				<p>
 					<strong>Fewer Page Restrictions</strong><br>
 					Full-length articles may be up to 5,000 words. Brief Reports may be up to 2,750 words.
 				</p>
 			</li>
 			<li>
-				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-varied.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/images/icon-varied.png">
 				<p>
 					<strong>Numerous Article Types</strong><br>
 					Full-length Articles, Case Reports, Brief Reports, Reviews, Viewpoints, Editorials, Letters, Teaching Images, Video Abstracts, and more.
 				</p>
 			</li>
 			<li>
-				<img src="{$baseUrl}/plugins/themes/tremor/assets/icon-oa.png">
+				<img src="{$baseUrl}/plugins/themes/tremor/assets/images/icon-oa.png">
 				<p>
 					<strong>Open Access</strong><br>
 					Authors maintain copyright. Greater visibility, increased citations, and higher impact on the field.
@@ -78,23 +79,33 @@
 {/if}
 
 {if $issue}
-{* Display the table of contents or cover page of the current issue. *}
 
-<div class="tabbable" style="margin-bottom: 18px;">
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#recent" data-toggle="tab"><h3>Selected Recent Publications</h3></a></li>
-        <li class=""><a href="#in-press" data-toggle="tab"><h3>In Press</h3></a></li>
-    </ul>
-    <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
-        {include file=$browseRecentTemplate}
-        
-        {include file=$browseInpressTemplate}
-    </div>
+{* Display recent publications and selected press *}
+
+<div id="homepage-tabs">
+
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">Selected Recent Publications</label>
+ 
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">In Press</label>
+ 
+ 
+  <section id="content1">
+    {include file=$browseRecentTemplate}
+  </section>
+  
+  <section id="content2">
+   {include file=$browseInpressTemplate}
+  </section>
+  
 </div>
+
 {/if}
+
 <!--{if $additionalHomeContent}
 <br />
 {$additionalHomeContent}
 {/if}-->
-{include file="frontend/components/footer.tpl"}
 
+{include file="frontend/components/footer.tpl"}

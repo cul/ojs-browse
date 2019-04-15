@@ -1,5 +1,5 @@
 <div class="tab-pane" id="in-press">
-	<h3 class="fallback">In Press</h3>
+
 	<ul class="papers">
 		{foreach from=$inPressArticles item=article}
 		<li>
