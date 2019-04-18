@@ -18,7 +18,7 @@
 		
 		<div class="date">
 			<time datetime="{$article->getDatePublished()|date_format:$dateFormatShort}" pubdate>{$article->getDatePublished()|date_format:$dateFormatLong}</time> |
-			<span class="type {$article->sectionTitle | lower}"><a href="/index.php/tremor/browse?section={$article->getSectionId()}">{$article->getSectionTitle()}</a></span>
+			<span class="type {$article->sectionTitle|lower}"><a href="/index.php/tremor/browse?section={$article->getSectionId()}">{$article->getSectionTitle()}</a></span>
 		</div>
 	
 		<ul class="galleys_links">

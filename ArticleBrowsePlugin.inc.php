@@ -68,12 +68,12 @@ class ArticleBrowsePlugin extends GenericPlugin {
 		$templateMgr =& TemplateManager::getManager();
 
 		define('ARTICLE_BROWSE_PLUGIN_NAME', $this->getName());
-		define('BROWSE_INDEX_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/index.tpl');
-		define('JOURNAL_INDEX_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'index/journal.tpl');		
-		define('BROWSE_BROWSE_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/browse.tpl');
-		define('ARTICLES_LIST_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/articles_list.tpl');
-		define('BROWSE_RECENT_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/recent.tpl');
-		define('BROWSE_INPRESS_TEMPLATE', $this->getTemplatePath(). DIRECTORY_SEPARATOR . 'templates'. DIRECTORY_SEPARATOR . 'browse/in-press.tpl');
+                define('BROWSE_INDEX_TEMPLATE', $this->getTemplateResource('browse/index.tpl'));
+                define('JOURNAL_INDEX_TEMPLATE', $this->getTemplateResource('index/journal.tpl'));              
+                define('BROWSE_BROWSE_TEMPLATE', $this->getTemplateResource('browse/browse.tpl'));
+                define('ARTICLES_LIST_TEMPLATE', $this->getTemplateResource('browse/articles_list.tpl'));
+                define('BROWSE_RECENT_TEMPLATE', $this->getTemplateResource('browse/recent.tpl'));
+                define('BROWSE_INPRESS_TEMPLATE', $this->getTemplateResource('browse/in-press.tpl'));
 
 
 
