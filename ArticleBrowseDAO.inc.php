@@ -13,7 +13,7 @@ define('STATUS_ARCHIVED', 0);
 
 
 class ArticleBrowseDAO extends DAO {
-	var $articleDao;
+	var $submissionDao;
 	var $authorDao;
 	var $galleyDao;
 	var $suppFileDao;
@@ -27,7 +27,7 @@ class ArticleBrowseDAO extends DAO {
 	 */
  	function ArticleBrowseDAO() {
  		parent::__construct();
- 		$this->articleDao =& DAORegistry::getDAO('ArticleDAO');
+ 		$this->submissionDao =& Application::getSubmissionDAO();
  		$this->authorDao =& DAORegistry::getDAO('AuthorDAO');
  		$this->galleyDao =& DAORegistry::getDAO('ArticleGalleyDAO');
 		$this->suppFileDao =& DAORegistry::getDAO('SubmissionFileDAO');
@@ -285,33 +285,10 @@ return $returner;
 		$i = 0;
 		while ($row = mysql_fetch_row($result)) {
 
-			$submissions[$i]->id = $row[0];
-
-		 	// Get the article title
-			$title_result = mysql_query(
-				'SELECT setting_value
-				FROM submission_settings
-				WHERE setting_name = "title"
-				AND submission_id = '. $row[0]. '
-				');
-			$submissions[$i]->title = mysql_result($title_result, 0);
-
-
-	 		// Get the article authors
-			$author_result = mysql_query(
-				'SELECT first_name, middle_name, SUBSTR(middle_name, 1,1) AS middle_initial, last_name, seq
-				FROM authors
-				WHERE submission_id = ' . $row[0] . '  
-				ORDER BY seq ASC'
-				);
-
-			while ($author_row = mysql_fetch_object($author_result)) {
-				$submissions[$i]->authors[] = $author_row;
-			}
-
+			$id = $row[0];
+			$submissions[$i] = $this->submissionDao->getById($id, null, false);
 			$i++;
 		}
-
 		$returner = $submissions;
 
 		return $returner;
