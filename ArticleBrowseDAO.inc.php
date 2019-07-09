@@ -263,22 +263,7 @@ return $returner;
 	function &getArticleInPress() {
 
 	 	// Return the list of reviewers inputted.
-		$result = mysql_query('
-			SELECT article_status.submission_id FROM (
-				SELECT decisions_1.submission_id, decisions_1.decision, decisions_1.date_decided, published.issue_id
-				FROM edit_decisions AS decisions_1
-				LEFT JOIN edit_decisions AS decisions_2 
-				ON decisions_1.submission_id = decisions_2.submission_id 
-				AND decisions_2.date_decided > decisions_1.date_decided
-				LEFT JOIN published_submissions AS published 
-				ON decisions_1.submission_id = published.submission_id
-				WHERE decisions_2.submission_id IS NULL
-				) AS article_status
-		WHERE article_status.decision = 1
-		AND issue_id IS NULL
-		ORDER BY article_status.date_decided DESC
-		'
-		);
+		$result = mysql_query('select submission_id from submissions where status='.STATUS_QUEUED.' and (stage_id='.WORKFLOW_STAGE_ID_EDITING.' or stage_id='.WORKFLOW_STAGE_ID_PRODUCTION.')');
 
 		$submissions = array();
 
