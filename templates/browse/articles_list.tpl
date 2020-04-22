@@ -5,7 +5,7 @@
 	<div class="obj_article_summary">
 		
 		<div class="title">
-			<a title="{$article->getLocalizedTitle()}" href="/index.php/tremor/article/view/{$article->getId()}">{$article->getLocalizedTitle()}</a>
+			<a title="{$article->getLocalizedTitle()}" {if $journal}href="{url journal=$journal->getPath() page="article" op="view" path=$article->getId()}"{else}href="{url page="article" op="view" path=$article->getId()}"{/if}  >{$article->getLocalizedTitle()}</a>
 		</div>
 
 		<div class="meta">
@@ -18,7 +18,11 @@
 		
 		<div class="date">
 			<time datetime="{$article->getDatePublished()|date_format:$dateFormatShort}" pubdate>{$article->getDatePublished()|date_format:$dateFormatLong}</time> |
-			<span class="type {$article->sectionTitle|lower}"><a href="/index.php/tremor/browse?section={$article->getSectionId()}">{$article->getSectionTitle()}</a></span>
+			<span class="type {$article->sectionTitle|lower}">
+<a {if $journal}href="{url journal=$journal->getPath() page="browse" path=$article->getSectionId()}"{else}href="{url page="browse" section=$article->getSectionId()}"{/if}
+>{$article->getSectionTitle()}
+</a>
+			</span>
 		</div>
 	
 		<ul class="galleys_links">

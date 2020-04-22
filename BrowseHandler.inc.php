@@ -31,8 +31,8 @@ class BrowseHandler extends Handler {
 		$templateMgr =& TemplateManager::getManager();
 		$issue =& $issueDao->getCurrent($journal->getId(), true);
 
-		// $journal_id = $journal->getId();
-		$journal_id = 1;
+		$journal_id = $journal->getId();
+		//$journal_id = 1;
 
 		$issue =& $issueDao->getCurrent($journal_id, true);
 
@@ -86,9 +86,9 @@ class BrowseHandler extends Handler {
 		// $templateMgr->assign('resultSize', $itemTotal);
 		$templateMgr->assign('listStart', $from);
 		// $templateMgr->assign('listStop', $to);
-		$templateMgr->assign('sections', $this->getSectionsList($articleDao));
+		$templateMgr->assign('sections', $this->getSectionsList($articleDao, $journal_id));
 		$templateMgr->assign('sectionId', $section);
-		$templateMgr->assign('years', array_filter($this->getYearsList($browseDao)));
+		$templateMgr->assign('years', array_filter($this->getYearsList($browseDao, $journal_id)));
 		$templateMgr->assign('activeYear', $year);
 		$templateMgr->assign('sort', $sort);
 #		$templateMgr->assign('numPages', $totalPages);
@@ -142,18 +142,18 @@ class BrowseHandler extends Handler {
 	}
 	
 
-	function getYearsList(&$browseDao){
+	function getYearsList(&$browseDao, $journal_id){
 		
 		$yearsList[] = 'All Years';
-		return $browseDao->getPublishedYearsList($yearsList);
+		return $browseDao->getPublishedYearsList($yearsList, $journal_id);
 	}
 
 	
-	function getSectionsList(&$articleDao){
+	function getSectionsList(&$articleDao, $journal_id){
 		
 		$sections[] = 'All Sections';
 		$browseDao = DAORegistry::getDAO('ArticleBrowseDAO');
-		return $browseDao->getSectionNames($sections);
+		return $browseDao->getSectionNames($sections, $journal_id);
 	}
 
 

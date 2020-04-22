@@ -37,9 +37,9 @@ class ArticleBrowseDAO extends DAO {
 
 
 	
-	function getSectionNames($sections = array()) {
+	function getSectionNames($sections = array(), $journal_id) {
 	
-		$sql ='select section_id, setting_value as setting_title from section_settings where setting_name = "title" group by setting_value';
+		$sql ='select ss.section_id as section_id, ss.setting_value as setting_title from section_settings ss, sections s where ss.setting_name = "title" and s.journal_id='.$journal_id.' and s.section_id=ss.section_id and s.section_id in (select distinct(section_id) from submissions where submission_id in (select submission_id from submission_settings)) group by setting_value';
 
 		$result =& $this->retrieve($sql);
 
@@ -282,13 +282,13 @@ return $returner;
 /*
 	 * Duplicate functionality of PublishedArticleDAO::getArticleYearRange()
 	*/
-	function getPublishedYearsList($yearsList){
+	function getPublishedYearsList($yearsList, $journal_id){
 		
 		$sql = 'SELECT 
 				DISTINCT EXTRACT(YEAR FROM pa.date_published) as year
 				FROM published_submissions pa, submissions a
 				WHERE	pa.submission_id = a.submission_id
-				AND a.status <> "0"
+				AND a.status <> "0"  and a.context_id='.$journal_id.'
 				ORDER BY pa.date_published DESC';
 		
 		$result =& $this->retrieve($sql);
