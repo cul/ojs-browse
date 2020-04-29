@@ -286,7 +286,9 @@ return $returner;
 		
 		$sql = 'SELECT 
 				DISTINCT EXTRACT(YEAR FROM pa.date_published) as year
-				FROM published_submissions pa, submissions a
+				FROM published_submissions pa, submissions a, issues i
+				AND pa.issue_id = i.issue_id
+				AND i.published = 1
 				WHERE	pa.submission_id = a.submission_id
 				AND a.status <> "0"  and a.context_id='.$journal_id.'
 				ORDER BY pa.date_published DESC';
