@@ -19,9 +19,9 @@
 <div style="margin-top:17px;">
 	{$pageInfo}
 	<div id="results" style="margin-top:17px;">
-		<ul class="cmp_article_list articles" start="{$listStart}">
+		<div class="cmp_article_list articles" start="{$listStart}">
 			{include file=$articlesListTemplate}
-		</ul>
+		</div>
 	</div>
 
 	{$pageInfo}
