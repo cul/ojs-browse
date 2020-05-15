@@ -88,11 +88,12 @@ class ArticleBrowsePlugin extends GenericPlugin {
 			define('HANDLER_CLASS', 'ArticleBrowseHandler');
 			$this->import('ArticleBrowseHandler');
 			return true;
-		}elseif ($page == '') {
-			define('HANDLER_CLASS', 'IndexRecentsHandler');
-			$this->import('IndexRecentsHandler');
-			return true;
 		}
+		// }elseif ($page == '') {
+		// 	define('HANDLER_CLASS', 'IndexRecentsHandler');
+		// 	$this->import('IndexRecentsHandler');
+		// 	return true;
+		// }
 		return false;
 	}
 
